@@ -1,0 +1,96 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  
+  
+  body{
+   margin: 0; /*the content will be in the right*/
+   overflow-x: hidden;/*better use it always to avoid the element moving with others in wierd way*/
+  }
+  
+  
+  .nav-open .nav{ /*means that we target nav-open when nav is present*/
+    transform: translateX(0);
+  }
+  
+  .nav-open .main{
+     transform: translateX(20%); /*to push the content just to the right of the sidenav*/
+  }
+  
+  .nav{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100vh;
+    position: fixed; /*floats over evrything in the page*/
+    top:0; /*top 0 and left 0 to position it in the top left corner of the page*/
+    left:0;
+    background:#333333;
+    transform: translateX(-100%);/*it push the nav out of the screen left so we cant see it*/
+    transition: 0.2s; /*the nav will appear smoothlly*/
+    overflow: hidden;
+    
+  }
+  
+  .nav-close{
+    background:none;
+    border: none;
+    display: flex;
+    align-items: center;
+    margin-left: auto; /*to position the close icon in the right side of the menu*/
+    padding: 1vw 2vw;
+    color: #dddddd;
+    cursor: pointer;
+  }
+  
+  .nav-links-container{
+    box-shadow: 0 -10px 10px rgba(0,0,0,0.15); /*nice color appeares between nav and links container to separate for the links of nav*/
+  }
+  .nav-link{
+    display: flex;
+    align-items: baseline ;
+    justify-content: space-between;
+    padding: 1vw 2vw; /*the same used as nav-close*/
+    text-decoration: none;
+    color:#dddddd;
+  
+  }
+  .nav-link:hover , /*when the user hovers over nav link or nav close*/
+  .nav-close:hover{
+      background:rgba(255, 255,255, 0.05);
+  }
+  
+  .nav-text{
+    font-size: 2vw;
+    font-family: 'Assistant' , sans-serif;
+    font-weight: 500;
+  }
+  
+  
+  .main {
+    transition: 0.2s; /*the content will appear smoothlly*/
+   }
+  
+  .content-item{
+    width: 100%;
+  }
+  
+  .botones{
+    background: #34b4b4;
+    padding: 10px;
+  }
+  
+  #medio{
+    background-color: #dddddd;
+    width: 60%;
+    margin-left:100px ;
+    
+  }
+  #medium{
+    width: 60%;
+    margin-left:100px ;
+  
+  }
